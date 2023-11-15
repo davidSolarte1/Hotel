@@ -32,7 +32,7 @@ urlpatterns = [
     path('reserva/<int:pk>/update/', views.ReservaUpdate.as_view() , name='reserva-update'),
     path('reserva/<int:pk>/delete/', views.ReservaDelete.as_view(), name='reserva-delete'),
 
-    path('cliente/', views.ClienteListView.as_view(), name='cliente-list'),
+    path('', views.ClienteListView.as_view(), name='cliente-list'),
     path('cliente/add/', views.ClienteCreate.as_view() , name='cliente-create'),
     path('cliente/<int:pk>/detail/', views.ClienteDetailView.as_view(), name='cliente-detail'),
     path('cliente/<int:pk>/update/',views.ClienteUpdate.as_view(),name='cliente-update'), 
