@@ -12,13 +12,13 @@ class Cliente(models.Model):
         return reverse('cliente-list')
 
 class Habitacion(models.Model):
-    numero = models.IntegerField(unique=True)
+    numero = models.CharField(max_length=3)
     tipo = models.CharField(max_length=100,  blank=True)
     capacidad = models.IntegerField()
 
     def __str__(self):
-        return self.tipo
-    
+        return self.numero
+        
     def get_absolute_url(self):
         return reverse('habitacion-list')
 
