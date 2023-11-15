@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block maincontent %}
+<h2>Reservar Habitación {{ habitacion.numero }}</h2>
+<form enctype="multipart/form-data" method="post" >
+  {% csrf_token %}
+  {{ form.as_p }}
+  <br>
+
+  <button type="submit" class="btn btn-primary">Reservar</button>
+  <a class='btn' href="{% url 'reserva-list' %}">Cancel</a>
+ 
+</form>
+{% endblock maincontent%} 

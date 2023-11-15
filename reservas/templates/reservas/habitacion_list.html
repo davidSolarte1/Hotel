@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block maincontent %}
+<h2>Habitaciones</h2>
+<a class="btn btn-primary" href="{% url 'habitacion-create' %}">Añadir Habitacion</a>
+
+<hr />
+
+<div class="row well">
+  {% for p in object_list.all %}
+      <div class="col-md-3 ">
+          <div class="card" style="width: 17rem; height: 13rem; margin-bottom: 1rem;">
+              <div class="card-body">
+                <h3 class="card-title">Habitación: {{ p.numero }} <br> Tipo: {{ p.tipo }}</h3>     
+                <p class="card-text">Capacidad: {{ p.capacidad }} persona(s)</p>
+                <a class="btn btn-primary" href="{% url 'reserva-create' %}">Hacer Reserva</a>
+                <a class="btn btn-secondary" href="{% url 'habitacion-detail' p.id %}">Detalles</a>
+              </div>    
+          </div>
+      </div>
+  {% endfor %}
+</div>
+{% endblock maincontent %}

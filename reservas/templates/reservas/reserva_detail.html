@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block section %}
+   <h2>
+       Habitación: {{ object.habitacion }} <br>
+    </h2>
+    <h3>
+        Cliente: {{ object.cliente}}
+    </h3>
+    <a class="btn btn-warning" href="{% url 'reserva-update' object.id %}">Editar</a>
+    <a class="btn btn-danger"  href="{% url 'reserva-delete' object.id %}">Eliminar</a> 
+   <hr>
+{% endblock section %}
+

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block section %}
+   <h2>
+      #{{ object.numero }}. {{ object.tipo }} 
+    </h2>
+    <h4>
+      Capacidad: {{ object.capacidad }} personas
+    </h4>
+    <a class="btn btn-warning" href="{% url 'habitacion-update' object.id %}">Editar</a>
+    <a class="btn btn-danger"  href="{% url 'habitacion-delete' object.id %}">Eliminar</a> 
+   <hr>
+{% endblock section %}
+

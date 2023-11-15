@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block maincontent %}
+<h2>Clientes</h2>
+<a class="btn btn-primary" href="{% url 'cliente-create' %}">Añadir Cliente</a>
+<hr />
+    <div class="row well">
+        {% for p in object_list.all %}
+            <div class="col-md-3 well">
+                <div class="card" style="width: 17rem; height: 13rem;;">
+                    <div class="card-body">
+                      <h3 class="card-title">Nombre: {{ p.nombre }}</h3>     
+                      <p class="card-text">Correo: {{ p.correo }}</p>
+                      <a class="btn btn-secondary" href="{% url 'cliente-detail' p.id %}">Detalles</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock maincontent %}
