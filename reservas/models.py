@@ -17,7 +17,7 @@ class Habitacion(models.Model):
     capacidad = models.IntegerField()
 
     def __str__(self):
-        return self.numero
+        return self.numero +". "+self.tipo 
         
     def get_absolute_url(self):
         return reverse('habitacion-list')
