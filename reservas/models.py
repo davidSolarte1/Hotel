@@ -13,6 +13,7 @@ class Cliente(models.Model):
 
 class Habitacion(models.Model):
     numero = models.CharField(max_length=3)
+    imagen = models.ImageField(upload_to='habitacion/', blank=True)
     tipo = models.CharField(max_length=100,  blank=True)
     capacidad = models.IntegerField()
 

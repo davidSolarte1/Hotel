@@ -10,8 +10,9 @@
 <div class="row well">
   {% for p in object_list.all %}
       <div class="col-md-3 ">
-          <div class="card" style="width: 17rem; height: 13rem; margin-bottom: 1rem;">
-              <div class="card-body">
+          <div class="card" style="width: 17rem; margin-bottom: 1rem;">
+            <img class="card-img-top" src="{% static p.imagen.url %}" alt="Card image cap">  
+            <div class="card-body">
                 <h3 class="card-title">Habitación: {{ p.numero }} <br> Tipo: {{ p.tipo }}</h3>     
                 <p class="card-text">Capacidad: {{ p.capacidad }} persona(s)</p>
                 <a class="btn btn-primary" href="{% url 'reserva-create' %}">Hacer Reserva</a>
