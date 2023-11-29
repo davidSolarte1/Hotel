@@ -11,10 +11,12 @@
         {% for p in object_list.all %}
 
         <div class="col-md-3 ">
-            <div class="card" style="width: 17rem; height: 13rem; margin-bottom: 1rem;">
+            <div class="card" style="width: 17rem; margin-bottom: 1rem;">
                 <div class="card-body">
                   <h3 class="card-title">{{ p.habitacion }}</h3>     
                   <p class="card-text">{{ p.cliente }}</p>
+                  <p class="card-text">{{ p.fecha_entrada }}</p>
+                  <p class="card-text">{{ p.fecha_salida }}</p>
                   <a class="btn btn-secondary" href="{% url 'reserva-detail' p.id %}">Detalles</a>
                 </div>    
             </div>

@@ -4,11 +4,15 @@
 
 {% block section %}
    <h2>
-       Habitación: {{ object.habitacion }} <br>
+       Habitación: {{ object.habitacion }} 
     </h2>
     <h3>
-        Cliente: {{ object.cliente}}
+        Cliente: {{ object.cliente}} <br>
     </h3>
+    <h5>
+        Fecha Ingreso: {{ object.fecha_entrada}} <br>
+        Fecha Salida: {{ object.fecha_salida}}
+    </h5>
     <a class="btn btn-warning" href="{% url 'reserva-update' object.id %}">Editar</a>
     <a class="btn btn-danger"  href="{% url 'reserva-delete' object.id %}">Eliminar</a> 
    <hr>
