@@ -1,8 +1,23 @@
 from .models import Habitacion, Reserva, Cliente
 from django.urls import reverse_lazy 
 from django.views.generic import CreateView, DeleteView, UpdateView, ListView, DetailView
-#from django import forms
+from rest_framework import viewsets
+from .serializer import ClienteSerializer,HabitacionSerializer,ReservaSerializer
 
+# ////////////////////////////////////
+
+class ClienteViewSet(viewsets.ModelViewSet):
+    queryset = Cliente.objects.all()
+    serializer_class = ClienteSerializer
+
+class HabitacionViewSet(viewsets.ModelViewSet):
+    queryset = Habitacion.objects.all()
+    serializer_class = HabitacionSerializer
+
+class ReservaViewSet(viewsets.ModelViewSet):
+    queryset = Reserva.objects.all()
+    serializer_class = ReservaSerializer
+    
 #Habitaciones
 
 class HabitacionListView(ListView):
@@ -60,3 +75,4 @@ class ClienteUpdate(UpdateView):
 class ClienteDelete(DeleteView):
     model = Cliente
     success_url = reverse_lazy('cliente-list')
+
